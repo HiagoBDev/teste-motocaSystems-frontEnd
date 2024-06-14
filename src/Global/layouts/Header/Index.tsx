@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="w-screen h-20">
       <nav className="flex w-full h-full gap-6 items-center justify-end bg-[#2A233C] ">
-        <div className="flex items-end gap-5 pr-5 sm:pr-8 md:pr-10 lg:pr-11">
+        <div className="flex items-end gap-5 mt-7 mx-8 sm:mx-10 md:mx-12">
           <Link to={"/"}>
             <img
               src={homeIcon}

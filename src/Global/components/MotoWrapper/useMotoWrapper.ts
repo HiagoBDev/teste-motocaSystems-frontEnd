@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
 import { MotoListService } from '../../../service/MotoListService/MotoListService';
 import { MotoDeleteService } from '../../../service/MotoDeleteService/MotoDeleteService';
-import { MotoList } from '../../../service/MotoListService/MotoListServiceType';
+export interface MotoCard {
+  id: number;
+  code: string;
+  name: string;
+  status: 'Em estoque' | 'Sem estoque' | 'Em trânsito';
+  value: string;
+  color: string;
+}
 
 export function useMotoWrapper() {
-  const [motos, setMotos] = useState<MotoList>([]);
+  const [motos, setMotos] = useState<MotoCard[]>([]);
   const [loadingMotoId, setLoadingMotoId] = useState<number | null>(null);
 
   useEffect(() => {
@@ -23,7 +30,7 @@ export function useMotoWrapper() {
   const deleteMoto = async (id: number) => {
     setLoadingMotoId(id);
     try {
-      await new Promise(resolve => setTimeout(resolve, 2500)); // Simula um atraso de 2,5 segundos
+      await new Promise(resolve => setTimeout(resolve, 1000));
       await MotoDeleteService.deleteMoto(id);
       setMotos(motos.filter(moto => moto.id !== id));
     } catch (error) {
