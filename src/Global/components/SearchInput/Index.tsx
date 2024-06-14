@@ -1,0 +1,21 @@
+
+interface SearchInputProps {
+  icon: string;
+  placeHolder: string;
+}
+
+export default function SearchInput({ icon, placeHolder }: SearchInputProps) {
+  return (
+    <label htmlFor="searchInput" className="w-full flex justify-center">
+      <div className="flex bg-transparent border border-[#CAC9CD] text-[#CAC9CD] pl-3 py-2 rounded-[5px] gap-2 w-full h-[35px] items-center">
+        <img src={icon} alt="icone de busca" height={14} width={14} />
+        <input
+          id="searchInput"
+          type="text"
+          placeholder={placeHolder}
+          className="bg-transparent font-normal text-[14px] h-fit sm:text-[12px] md:text-[14px] lg:text-[15px] xl:text-[16px] focus:outline-none w-full "
+        />
+      </div>
+    </label>
+  );
+}
