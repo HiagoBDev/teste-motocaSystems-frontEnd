@@ -1,6 +1,44 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "motos": [
+    {
+      "id": "1",
+      "code": "0001",
+      "name": "Modelo 2",
+      "status": "Sem estoque",
+      "value": "12000",
+      "color": "Preto"
+    },
+    {
+      "id": "2",
+      "code": "0002",
+      "name": "Modelo 2",
+      "status": "Sem estoque",
+      "value": "12000",
+      "color": "Preto"
+    },
+    {
+      "id": "3",
+      "code": "0003",
+      "name": "Modelo 3",
+      "status": "Em trânsito",
+      "value": "11000",
+      "color": "Vermelho"
+    },
+    {
+      "id": "4",
+      "code": "0004",
+      "name": "Modelo 4",
+      "status": "Em estoque",
+      "value": "10500",
+      "color": "Verde"
+    },
+    {
+      "id": "5",
+      "code": "0005",
+      "name": "Modelo 5",
+      "status": "Sem estoque",
+      "value": "11500",
+      "color": "Branco"
+    }
   ]
 }
