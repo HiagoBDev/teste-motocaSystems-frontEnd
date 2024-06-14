@@ -11,7 +11,7 @@ export default function Index() {
         <Route path="/" element={<AppLayout/>}>
           <Route index element={<MotoList/>}/>
           <Route path="/motoRegister" element={<MotoRegister/>}/>
-          <Route path="/MotoEdit" element={<MotoEdit/>}/>
+          <Route path="/MotoEdit/:motoId" element={<MotoEdit/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

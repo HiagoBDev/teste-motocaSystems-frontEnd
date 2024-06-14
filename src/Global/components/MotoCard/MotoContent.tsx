@@ -19,7 +19,7 @@ export default function MotoContent({ name, status, value, color, code }: MotoCo
   return (
     <div className="flex flex-col sm:flex-row sm:gap-10">
         <div className="flex items-center mb-2 sm:mb-0 sm:px-8 md:px-14">
-          <span className="text-[#8C57FF] font-medium text-[17px]">#{code}</span>
+          <span className="text-[#8C57FF] font-medium text-[17px]">{code}</span>
         </div>
         <div className="text-[#E7E3FC] flex flex-col sm:gap-3 gap-1">
           <p className=' font-semibold text-[15px] sm:text-[17px] flex gap-3'>{name} <span className={` px-2 rounded-[35px] text-[13px] sm:text-[15px] font-medium ${statusClasses}`}>{status}</span></p>
