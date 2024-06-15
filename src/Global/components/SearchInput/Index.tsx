@@ -5,7 +5,12 @@ interface SearchInputProps {
   search: string;
 }
 
-export default function SearchInput({ icon, placeHolder, search, setSearch, }: SearchInputProps) {
+export default function SearchInput({
+  icon,
+  placeHolder,
+  search,
+  setSearch,
+}: SearchInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearch(value);
@@ -13,7 +18,7 @@ export default function SearchInput({ icon, placeHolder, search, setSearch, }: S
 
   return (
     <label htmlFor="searchInput" className="w-full flex justify-center">
-      <div className="flex bg-transparent border border-[#CAC9CD] text-[#CAC9CD] pl-3 py-2 rounded-[5px] gap-2 w-full h-[35px] items-center">
+      <div className="flex bg-transparent border border-[#CAC9CD] text-[#CAC9CD] pl-3 py-2 rounded-[5px] gap-2 w-full sm:w-[300px] md:w-[350px] lg:w-[400px] h-[35px] items-center">
         <img src={icon} alt="icone de busca" height={14} width={14} />
         <input
           id="searchInput"
@@ -21,7 +26,7 @@ export default function SearchInput({ icon, placeHolder, search, setSearch, }: S
           onChange={handleChange}
           value={search}
           placeholder={placeHolder}
-          className="bg-transparent font-normal text-[14px] h-fit sm:text-[16px] sm:pr-5 md:text-[16px] lg:text-[16px] xl:text-[16px] md:pr-20 lg:pr-28 xl:pr-36 focus:outline-none w-full "
+          className="bg-transparent font-normal text-[14px] sm:text-[16px] overflow-hidden text-ellipsis  h-fit w-full sm:pr-8 md:pr-12 lg:pr-16 xl:pr-24 focus:outline-none placeholder:text-[#CAC9CD]"
         />
       </div>
     </label>
