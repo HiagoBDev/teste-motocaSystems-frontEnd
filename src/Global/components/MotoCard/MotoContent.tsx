@@ -22,17 +22,19 @@ export default function MotoContent({ name, status, value, color, code, }: MotoC
         <span className="text-[#8C57FF] font-medium text-[17px]">{code}</span>
       </div>
       <div className="text-[#E7E3FC] flex flex-col sm:gap-3 gap-1">
-        <p className=" font-semibold text-[15px] sm:text-[17px] flex gap-3">
-          {name.toUpperCase()}{" "}
-          <span
-            className={twMerge(
-              "px-2 rounded-[35px] text-[13px] sm:text-[15px] font-medium",
-              statusClasses
-            )}
-          >
-            {status}
-          </span>
-        </p>
+        <div className=" flex gap-3">  
+          <p className=" font-semibold text-[15px] sm:text-[17px] flex gap-3 break-words">
+            {name.toUpperCase()}
+          </p>
+            <span
+              className={twMerge(
+                "px-2 rounded-[35px] text-[13px] text-center sm:text-[15px] font-medium",
+                statusClasses
+              )}
+            >
+              {status}
+            </span>
+        </div>
         <p className=" font-medium text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]">
           Valor: R$ {value}
         </p>

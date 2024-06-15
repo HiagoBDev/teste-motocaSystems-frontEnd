@@ -26,7 +26,7 @@ export default function InputForm({ label, placeholder, register, type, errorMes
       >
         <legend
           className={twMerge(
-            "mx-2 px-2 font",
+            "mx-2 px-2 font-medium text-sm",
             disabled ? "text-[#E7E3FC80]" : "text-[#E7E3FC]",
             errorMessage && "text-red-500"
           )}

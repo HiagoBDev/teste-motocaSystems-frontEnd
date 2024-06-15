@@ -18,7 +18,7 @@ export default function Select({ register, errorMessage, label, ...rest }: Selec
     >
       <legend
         className={twMerge(
-          "mx-2 px-2 font-medium text-sm lg:text-lg text-[#E7E3FC]",
+          "mx-2 px-2 font-medium text-sm text-[#E7E3FC]",
           errorMessage && "text-red-500"
         )}
       >

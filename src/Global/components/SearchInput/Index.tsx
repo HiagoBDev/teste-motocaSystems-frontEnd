@@ -21,7 +21,7 @@ export default function SearchInput({ icon, placeHolder, search, setSearch, }: S
           onChange={handleChange}
           value={search}
           placeholder={placeHolder}
-          className="bg-transparent font-normal text-[14px] h-fit sm:text-[12px] md:text-[14px] lg:text-[15px] xl:text-[16px] focus:outline-none w-full "
+          className="bg-transparent font-normal text-[14px] h-fit sm:text-[16px] sm:pr-5 md:text-[16px] lg:text-[16px] xl:text-[16px] md:pr-20 lg:pr-28 xl:pr-36 focus:outline-none w-full "
         />
       </div>
     </label>
