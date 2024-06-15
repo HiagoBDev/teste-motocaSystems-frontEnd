@@ -2,7 +2,7 @@ import userIcon from "../../../assets/icons/UserIcon.svg";
 import homeIcon from "../../../assets/icons/HomeIcon.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Menu from "../../components/OpenMenu/OpenMenu"; // Importe o novo componente Menu
+import Menu from "../../components/OpenMenu/OpenMenu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

@@ -5,12 +5,10 @@ interface MotoActionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   alt: string;
 }
 
-export default function MotoAction({ icon, alt, ...rest }:MotoActionProps) {
+export default function MotoAction({ icon, alt, ...rest }: MotoActionProps) {
   return (
-    <button
-    {...rest}
-    >
+    <button {...rest}>
       <img src={icon} alt={alt} className="mr-2" />
     </button>
-  )
+  );
 }

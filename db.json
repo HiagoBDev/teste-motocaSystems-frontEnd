@@ -4,25 +4,25 @@
       "id": "bcae",
       "code": "#0001",
       "name": "HONDA POP 110I",
-      "color": "VERMELHA",
+      "color": "BRANCA",
       "value": "15.000,00",
       "status": "Em estoque"
     },
     {
-      "id": "afa1",
+      "id": "02ee",
       "code": "#0002",
       "name": "HONDA 500x",
-      "color": "AZUL",
+      "color": "vermelha",
       "value": "50.000,00",
       "status": "Sem estoque"
     },
     {
-      "id": "a29e",
+      "id": "94dc",
       "code": "#0003",
-      "name": "BIZ 125",
-      "color": "CREME",
-      "value": "15.000,00",
-      "status": "Em estoque"
+      "name": "HONDA CB 300F TWISTER",
+      "color": "PRETA",
+      "value": "30.000,00",
+      "status": "Em trânsito"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import Button from "../Button/Index";
 import InputForm from "../InputForm/Index";
 import Select from "../Select/Index";
-import UpEditIcon from '../../../assets/icons/UpEditIcon.svg';
+import UpEditIcon from "../../../assets/icons/UpEditIcon.svg";
 import useEditForm from "./useEditForm";
 import { MotoCard } from "../../../service/ServiceType";
 
@@ -13,47 +13,52 @@ interface EditFormProps {
 export default function EditForm({ motoData, motoId }: EditFormProps) {
   const { handleSubmit, errors, register } = useEditForm({
     initialData: motoData,
-    onSubmit: () => {}
+    onSubmit: () => {},
   });
 
   return (
-    <form className="flex flex-col gap-4 w-full items-center" onSubmit={handleSubmit(motoId)}>
+    <form
+      className="flex flex-col gap-4 w-full items-center"
+      onSubmit={handleSubmit(motoId)}
+    >
       <InputForm
+        disabled
         label="Código"
         type="text"
         mask="#9999"
         placeholder="#"
-        register={register('code')}
+        register={register("code")}
         errorMessage={errors.code?.message}
       />
       <InputForm
         label="Modelo da Moto"
         type="text"
         placeholder="CB 500F"
-        register={register('name')}
+        register={register("name")}
         errorMessage={errors.name?.message}
       />
       <InputForm
         label="Cor"
         type="text"
         placeholder="VERMELHA"
-        register={register('color')}
+        register={register("color")}
         errorMessage={errors.color?.message}
       />
       <InputForm
         label="Valor"
         type="text"
         placeholder="40.660,00"
-        register={register('value')}
+        register={register("value")}
         errorMessage={errors.value?.message}
-        mask="99.999,99"
       />
       <Select
         label="Status"
-        register={register('status')}
+        register={register("status")}
         errorMessage={errors.status?.message}
       />
-      <Button type="submit" size="large" icon={UpEditIcon}>ATUALIZAR</Button>
+      <Button type="submit" size="large" icon={UpEditIcon}>
+        ATUALIZAR
+      </Button>
     </form>
   );
 }
