@@ -11,11 +11,13 @@ export default function MotoRegister() {
           </span>
         </div>
       </header>
-      <Divider color=" bg-[#CAC9CD]"  />
+      <Divider color=" bg-[#CAC9CD]" />
       <div className=" mt-16 flex flex-col items-center w-full gap-10">
-        <h2 className=" font-semibold text-[17px] sm:text-2xl lg:text-2xl xl:text-[25px] text-[#E7E3FC]">Preencha as informações a baixo para registrar uma Moto 🏍️</h2>
-        <CreateForm/>
+        <h2 className=" font-semibold text-[17px] sm:text-2xl lg:text-2xl xl:text-[25px] text-[#E7E3FC]">
+          Preencha as informações a baixo para registrar uma Moto 🏍️
+        </h2>
+        <CreateForm />
       </div>
     </section>
-  )
+  );
 }

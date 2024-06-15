@@ -5,12 +5,11 @@ interface SearchInputProps {
   search: string;
 }
 
-export default function SearchInput({ icon, placeHolder, search, setSearch }: SearchInputProps) {
-
+export default function SearchInput({ icon, placeHolder, search, setSearch, }: SearchInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearch(value);
-};
+  };
 
   return (
     <label htmlFor="searchInput" className="w-full flex justify-center">

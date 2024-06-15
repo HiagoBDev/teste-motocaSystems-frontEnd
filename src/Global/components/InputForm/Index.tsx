@@ -1,29 +1,11 @@
 import { twMerge } from "tailwind-merge";
-import classNames from "classnames";
 import { InputFormProps } from "./InputFormProps";
 import InputMask from "react-input-mask";
 import { ChangeEvent, useState } from "react";
 
 export default function InputForm({ label, placeholder, register, type, errorMessage, value, disabled, onChange, mask }: InputFormProps) {
+
   const [inputValue, setInputValue] = useState(value);
-
-  const legendClasses = classNames({
-    "text-[#E7E3FC80]": disabled, 
-    "text-[#E7E3FC]": !disabled, 
-    "text-red-500": errorMessage,
-  });
-
-  const fieldsetClasses = classNames({
-    "border-[#E7E3FC80]": disabled,
-    "border-[#E7E3FC]": !disabled,
-    "border-red-500": errorMessage,
-  });
-
-  const inputClasses = classNames({
-    "text-[#E7E3FC80]": disabled,
-    "text-[#E7E3FC]": !disabled,
-  });
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setInputValue(newValue);
@@ -31,11 +13,24 @@ export default function InputForm({ label, placeholder, register, type, errorMes
       onChange(e);
     }
   };
+  
 
   return (
     <div className="w-full max-w-[419px]">
-      <fieldset className={twMerge("border-[0.5px] rounded-[5px] bg-transparent w-full max-w-[419px]", fieldsetClasses)}>
-        <legend className={twMerge("mx-2 px-2 font", legendClasses)}>
+      <fieldset
+        className={twMerge(
+          "border-[0.5px] rounded-[5px] bg-transparent w-full max-w-[419px]",
+          disabled ? "border-[#E7E3FC80]" : "border-[#E7E3FC]",
+          errorMessage && "border-red-500"
+        )}
+      >
+        <legend
+          className={twMerge(
+            "mx-2 px-2 font",
+            disabled ? "text-[#E7E3FC80]" : "text-[#E7E3FC]",
+            errorMessage && "text-red-500"
+          )}
+        >
           <label htmlFor={label}>{label}</label>
         </legend>
         {mask ? (
@@ -47,7 +42,10 @@ export default function InputForm({ label, placeholder, register, type, errorMes
             id={label}
             type={type}
             placeholder={placeholder}
-            className={twMerge("pl-[15px] mb-2 pt w-full focus:outline-none bg-transparent h-[30px] border-none", inputClasses)}
+            className={twMerge(
+              "pl-[15px] mb-2 pt w-full focus:outline-none bg-transparent h-[30px] border-none",
+              disabled ? "text-[#E7E3FC80]" : "text-[#E7E3FC]"
+            )}
             value={inputValue}
             onChange={handleChange}
           />
@@ -58,7 +56,10 @@ export default function InputForm({ label, placeholder, register, type, errorMes
             id={label}
             type={type}
             placeholder={placeholder}
-            className={twMerge("pl-[15px] mb-2 pt w-full focus:outline-none bg-transparent h-[30px] border-none", inputClasses)}
+            className={twMerge(
+              "pl-[15px] mb-2 pt w-full focus:outline-none bg-transparent h-[30px] border-none",
+              disabled ? "text-[#E7E3FC80]" : "text-[#E7E3FC]"
+            )}
             value={inputValue}
             onChange={handleChange}
           />

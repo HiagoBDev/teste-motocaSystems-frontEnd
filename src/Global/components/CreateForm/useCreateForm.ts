@@ -3,6 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MotoCreateService } from "../../../service/MotoCreateService/MotoCreateService";
 import { useNavigate } from 'react-router-dom';
+import toast from "react-hot-toast";
 
 const schema = z.object({
   code: z.string().regex(/^#[0-9]{4}$/, 'A moto deve ter um código (EX:1234)'),
@@ -36,6 +37,7 @@ export function useCreateForm() {
         status: data.status,
       });
       console.log(response);
+      toast.success('Moto criada com sucesso!');
       navigate('/')
     } catch (error) {
       console.log(error);

@@ -1,10 +1,10 @@
-import Divider from '../../Global/components/Divider/Index';
-import EditForm from '../../Global/components/EditForm/Index';
-import useMotoEdit from './useMotoEdit';
-import { useParams } from 'react-router-dom';
+import Divider from "../../Global/components/Divider/Index";
+import EditForm from "../../Global/components/EditForm/Index";
+import useMotoEdit from "./useMotoEdit";
+import { useParams } from "react-router-dom";
 
 export default function MotoEdit() {
-  const { motoId } = useParams()
+  const { motoId } = useParams();
   const { motoData } = useMotoEdit(motoId);
 
   return (

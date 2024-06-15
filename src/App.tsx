@@ -1,9 +1,11 @@
-import Router from './Router/Index'
+import Router from "./Router/Index";
 
 function App() {
   return (
-      <Router/>
-  )
+    <div>
+      <Router />
+    </div>
+  );
 }
 
-export default App
+export default App;

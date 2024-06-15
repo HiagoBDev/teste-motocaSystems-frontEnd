@@ -1,5 +1,5 @@
 export interface MotoCard {
-  id?: string; // Alterado para string
+  id?: string | undefined;
   code: string;
   name: string;
   status: 'Em estoque' | 'Sem estoque' | 'Em trânsito';
