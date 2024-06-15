@@ -14,7 +14,9 @@ interface MotoWrapperProps {
 export default function MotoWrapper({ search }: MotoWrapperProps) {
   const { motos, deleteMoto, loadingMotoId } = useMotoWrapper();
   const filteredMotos = filterMotos(motos, search);
-  const handleDeleteClick = (id: string) => { deleteMoto(id) };
+  const handleDeleteClick = (id: string | undefined) => {
+    deleteMoto(id);
+  };
 
   return (
     <section className="w-full pl-[10px] flex flex-col gap-6 mt-6 pb-40">
@@ -43,7 +45,7 @@ export default function MotoWrapper({ search }: MotoWrapperProps) {
                 </Link>
               </>
             ) : (
-              <>
+              <div>
                 <MotoAction
                   icon={DeleteIcon}
                   alt="Botão de excluir moto"
@@ -52,7 +54,7 @@ export default function MotoWrapper({ search }: MotoWrapperProps) {
                 <Link to={`/motoEdit/${moto.id}`}>
                   <MotoAction icon={EyeEditIcon} alt="Botão de editar moto" />
                 </Link>
-              </>
+              </div>
             )}
           </MotoCard.Actions>
         </MotoCard.Root>

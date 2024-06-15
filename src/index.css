@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   font-family: "Poppins", sans-serif;
 }
 
-html{
-  background: #2A233C;
+html {
+  background: #2a233c;
 }
 
 .custom-select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url('src/assets/icons/custom-arrow.svg'); 
+  background-image: url("src/assets/icons/custom-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 20px top 10px;
   background-size: 10px;

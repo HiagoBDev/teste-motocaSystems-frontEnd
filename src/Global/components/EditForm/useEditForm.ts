@@ -3,7 +3,9 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { MotoCard } from '../../../service/ServiceType';
 import { MotoEditService } from '../../../service/MotoEditService/MotoEditService';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 
 const schema = z.object({
   code: z.string().regex(/^#[0-9]{4}$/, 'A moto deve ter um código (EX:1234)'),
@@ -29,8 +31,9 @@ const useEditForm = ({ initialData, onSubmit }: UseEditFormProps) => {
     resolver: zodResolver(schema),
     defaultValues: initialData
   });
+  const navigate = useNavigate();
 
-  const handleSubmit = (motoId: string) => hookFormHandleSubmit(async (updatedFields) => {
+  const handleSubmit = (motoId: string | undefined) => hookFormHandleSubmit(async (updatedFields) => {
     try {
       const response = await MotoEditService.updateMoto(motoId, {
         code: updatedFields.code,
@@ -40,9 +43,11 @@ const useEditForm = ({ initialData, onSubmit }: UseEditFormProps) => {
         status: updatedFields.status,
       });
       console.log(response);
-      toast.success('Moto atualizada com sucesso');
       onSubmit(updatedFields);
+        toast.success('Moto atualizada com sucesso!');
+      navigate('/')
     } catch (error) {
+      toast.error('Erro ao atualizar moto.');
       console.error('Erro ao atualizar moto:', error);
     }
   });
@@ -50,7 +55,7 @@ const useEditForm = ({ initialData, onSubmit }: UseEditFormProps) => {
   return {
     handleSubmit,
     errors,
-    register
+    register,
   };
 };
 
