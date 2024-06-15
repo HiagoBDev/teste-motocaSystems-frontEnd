@@ -1,8 +1,9 @@
-import { MotoCard } from '../MotoListService/MotoListServiceType'; // Supondo que MotoServiceType defina a interface Moto
+
 import { httpClient } from '../../utils/httpClient';
+import { MotoCard } from '../ServiceType';
 
 export class MotoEditService {
-  static async updateMoto(motoId: string, updatedFields: Partial<MotoCard>): Promise<MotoCard> {
+  static async updateMoto(motoId: string|undefined, updatedFields: Partial<MotoCard>): Promise<MotoCard> {
     try {
       const response = await httpClient.patch<MotoCard>(`/motos/${motoId}`, updatedFields);
       return response.data;

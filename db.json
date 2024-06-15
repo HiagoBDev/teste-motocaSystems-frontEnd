@@ -4,7 +4,7 @@
       "id": "bcae",
       "code": "#0001",
       "name": "HONDA POP 110I",
-      "color": "BRANCA",
+      "color": "VERMELHA",
       "value": "15.000,00",
       "status": "Em estoque"
     },
@@ -12,9 +12,17 @@
       "id": "afa1",
       "code": "#0002",
       "name": "HONDA 500x",
-      "color": "VERMELHA",
+      "color": "AZUL",
       "value": "50.000,00",
       "status": "Sem estoque"
+    },
+    {
+      "id": "a29e",
+      "code": "#0003",
+      "name": "BIZ 125",
+      "color": "CREME",
+      "value": "15.000,00",
+      "status": "Em estoque"
     }
   ]
 }
