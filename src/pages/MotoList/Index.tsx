@@ -12,8 +12,6 @@ export default function MotoList() {
 
   const handleSearchChange = (value: string) => {
     setSearch(value);
-    console.log("Valor da busca atual:", value); // Exemplo de uso do valor de busca
-    // Aqui você pode fazer qualquer operação necessária com o valor atual da busca
   };
 
   return (
