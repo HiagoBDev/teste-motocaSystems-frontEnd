@@ -1,14 +1,5 @@
 import { httpClient } from '../../utils/httpClient';
-
-export interface MotoCard {
-  id: number;
-  code: string;
-  name: string;
-  status: 'Em estoque' | 'Sem estoque' | 'Em trânsito';
-  value: string;
-  color: string;
-}
-
+import { MotoCard } from '../ServiceType';
 
 export class MotoListService {
   static async getMotoList(): Promise<MotoCard[]> {
@@ -31,3 +22,4 @@ export class MotoListService {
     }
   }
 }
+

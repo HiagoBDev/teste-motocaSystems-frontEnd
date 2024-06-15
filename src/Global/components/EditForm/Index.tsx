@@ -2,25 +2,58 @@ import Button from "../Button/Index";
 import InputForm from "../InputForm/Index";
 import Select from "../Select/Index";
 import UpEditIcon from '../../../assets/icons/UpEditIcon.svg';
-import { useState, ChangeEvent } from "react";
+import useEditForm from "./useEditForm";
+import { MotoCard } from "../../../service/ServiceType";
 
-export default function EditForm() {
-  const [value, setValue] = useState<string>('branca');
+interface EditFormProps {
+  motoData: MotoCard;
+  motoId: string | undefined;
+}
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setValue(newValue);
-    console.log(newValue);
-  };
+export default function EditForm({ motoData, motoId }: EditFormProps) {
+  const { handleSubmit, errors, register } = useEditForm({
+    initialData: motoData,
+    onSubmit: () => {}
+  });
 
   return (
-    <form className="flex flex-col gap-4 w-full items-center">
-      <InputForm label="Código" type="text" disabled />
-      <InputForm label="Modelo da Moto" type="text" value={value} onChange={handleInputChange} />
-      <InputForm label="Cor" type="text" />
-      <InputForm label="Valor" type="text" />
-      <Select />
-      <Button size="large" icon={UpEditIcon}>ATUALIZAR</Button>
+    <form className="flex flex-col gap-4 w-full items-center" onSubmit={handleSubmit(motoId)}>
+      <InputForm
+        label="Código"
+        type="text"
+        mask="#9999"
+        placeholder="#"
+        register={register('code')}
+        errorMessage={errors.code?.message}
+      />
+      <InputForm
+        label="Modelo da Moto"
+        type="text"
+        placeholder="CB 500F"
+        register={register('name')}
+        errorMessage={errors.name?.message}
+      />
+      <InputForm
+        label="Cor"
+        type="text"
+        placeholder="VERMELHA"
+        register={register('color')}
+        errorMessage={errors.color?.message}
+      />
+      <InputForm
+        label="Valor"
+        type="text"
+        placeholder="40.660,00"
+        register={register('value')}
+        errorMessage={errors.value?.message}
+        mask="99.999,99"
+      />
+      <Select
+        label="Status"
+        register={register('status')}
+        errorMessage={errors.status?.message}
+      />
+      <Button type="submit" size="large" icon={UpEditIcon}>ATUALIZAR</Button>
     </form>
   );
 }

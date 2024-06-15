@@ -42,7 +42,8 @@ export default function CreateForm() {
         errorMessage={errors.value?.message}
         mask="99.999,99"
       />
-      <Select 
+      <Select
+      label="Status"
       register={register("status")}
       errorMessage={errors.status?.message}
       />
