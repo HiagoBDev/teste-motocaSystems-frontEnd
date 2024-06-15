@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MotoCard } from "../../components/MotoCard/index";
 import MotoAction from "../MotoCard/MotoAction";
 import { useMotoWrapper } from "./useMotoWrapper";
@@ -6,16 +6,20 @@ import DeleteIcon from "../../../assets/icons/DeleteIcon.svg";
 import EyeEditIcon from "../../../assets/icons/EyeEditIcon.svg";
 import { TailSpin } from "react-loader-spinner";
 import { filterMotos } from "../../../utils/filterMotos";
-
 interface MotoWrapperProps {
   search: string;
 }
 
 export default function MotoWrapper({ search }: MotoWrapperProps) {
   const { motos, deleteMoto, loadingMotoId } = useMotoWrapper();
+  const navigate = useNavigate();
   const filteredMotos = filterMotos(motos, search);
+
   const handleDeleteClick = (id: string | undefined) => {
     deleteMoto(id);
+  };
+  const handleEditClick = (id: string | undefined) => {
+    navigate(`/motoEdit/${id}`);
   };
 
   return (
@@ -40,21 +44,25 @@ export default function MotoWrapper({ search }: MotoWrapperProps) {
                   ariaLabel="tail-spin-loading"
                   radius="0"
                 />
-                <Link to={`/motoEdit/${moto.id}`}>
-                  <MotoAction icon={EyeEditIcon} alt="Botão de editar moto" />
-                </Link>
+                <MotoAction 
+                  icon={EyeEditIcon} 
+                  alt="Botão de editar moto" 
+                  onClick={() => handleEditClick(moto.id)} 
+                />
               </>
             ) : (
-              <div>
+              <>
                 <MotoAction
                   icon={DeleteIcon}
                   alt="Botão de excluir moto"
                   onClick={() => handleDeleteClick(moto.id)}
                 />
-                <Link to={`/motoEdit/${moto.id}`}>
-                  <MotoAction icon={EyeEditIcon} alt="Botão de editar moto" />
-                </Link>
-              </div>
+                <MotoAction 
+                  icon={EyeEditIcon} 
+                  alt="Botão de editar moto" 
+                  onClick={() => handleEditClick(moto.id)} 
+                />
+              </>
             )}
           </MotoCard.Actions>
         </MotoCard.Root>

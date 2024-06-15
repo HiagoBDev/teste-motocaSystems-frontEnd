@@ -18,7 +18,7 @@ export default function EditForm({ motoData, motoId }: EditFormProps) {
 
   return (
     <form
-      className="flex flex-col gap-4 w-full items-center"
+      className="flex flex-col gap-8 w-full items-center"
       onSubmit={handleSubmit(motoId)}
     >
       <InputForm
