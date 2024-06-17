@@ -29,6 +29,10 @@ Projeto desenvolvido em React com typescript e tailwind css como base para a cri
 - `Classnames` -> **Utilitário para gerar classes condicionalmente em componentes React.**
 
 ## 📋 Instruções para rodar o projeto
+*Requisitos*:
+- Node, utilizei a versão: 20.12.1
+- Git, utilizei a versão: 2.44.0.windows.1
+- VsCode
 
 ```bash
 // Abra o prompt de comando ou bash na sua área de trabalho e siga estes passos:
